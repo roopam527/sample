@@ -106,7 +106,7 @@ socket.on('pulse_data',(data)=>{
     const time = `${timestamp.getHours()}:${timestamp.getMinutes()}:${timestamp.getSeconds()}`;
     const date = `${timestamp.getDate()}-${timestamp.getMonth()+1}-${timestamp.getFullYear()}`;
       
-    document.getElementById("pulse_current_temp").innerHTML=data+"° C";
+    document.getElementById("pulse_current_temp").innerHTML=data+" BPM";
     document.getElementById("pulse_current_time").innerHTML="at "+time;
     document.getElementById("pulse_current_date").innerHTML="on "+date;
     pulse_dataset.push(data);
@@ -124,7 +124,7 @@ socket.on('body_temp_data',(data)=>{
     const time = `${timestamp.getHours()}:${timestamp.getMinutes()}:${timestamp.getSeconds()}`;
     const date = `${timestamp.getDate()}-${timestamp.getMonth()+1}-${timestamp.getFullYear()}`;
         
-    document.getElementById("body_temp_current_temp").innerHTML=data+"° C";
+    document.getElementById("body_temp_current_temp").innerHTML=data+"° F";
     document.getElementById("body_temp_current_time").innerHTML="at "+time;
     document.getElementById("body_temp_current_date").innerHTML="on "+date;
     body_temp_dataset.push(data);
