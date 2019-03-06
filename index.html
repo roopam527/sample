@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IOT -- Health</title>
+   
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Luckiest+Guy" rel="stylesheet"> 
+       
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<body>
+        <div class="navigation">
+                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    
+                <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+    
+                <div class="navigation__background">&nbsp;</div>
+    
+                <nav class="navigation__nav">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a  href="#temp" class="navigation__link"><span>01</span>Room Temperature</a></li>
+                        <li class="navigation__item"><a href="#body-temp" class="navigation__link"><span>02</span>Body Temperature</a></li>
+                      
+                        <li class="navigation__item"><a href="#pulse" class="navigation__link"><span>03</span>Pulse Rate</a></li>
+                      
+             
+                        
+                    </ul>
+                </nav>
+            </div>
+
+    <div id="temp"class="container">
+        <div class="header">
+            <h1 class="header__heading">TEMPERATURE</h1>
+            <h1 id="temp_status">----</h1>
+            <h1 id="current_temp">----</h1>
+            <p id="current_time">----</p>
+            <p id="current_date">----</p>
+
+        </div>
+        <div class="map_container">
+                <canvas id="temp-Chart" width="200" height="120"></canvas>
+
+        </div>
+    </div>
+    <div id="pulse" class="container">
+            <div class="header">
+                <h1 class="header__heading">Pulse Rate</h1>
+                
+                <h1 id="pulse_current_temp">----</h1>
+                <p id="pulse_current_time">----</p>
+                <p id="pulse_current_date">----</p>
+    
+            </div>
+            <div class="map_container">
+                    <canvas id="pulse-Chart" width="200" height="120"></canvas>
+    
+            </div>
+        </div>
+        <div id="body-temp" class="container">
+                <div class="header">
+                    <h1 class="header__heading">BODY TEMPERATURE</h1>
+                    
+                    <h1 id="body_temp_current_temp">----</h1>
+                    <p id="body_temp_current_time">----</p>
+                    <p id="body_temp_current_date">----</p>
+        
+                </div>
+                <div class="map_container">
+                        <canvas id="body-Chart" width="200" height="120"></canvas>
+        
+                </div>
+            </div>
+
+    <script src="./scripts/temperatures.js"></script>
+</body>
+</html>

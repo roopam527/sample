@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+<body>
+    <div>
+    <input type="text" id="room_temperature"/>
+    <button onclick="temperature()" id="room_temperature_btn"> submit room temperature</button>
+</div>
+<div>
+    <input type="text" id="body_temperature"/>
+    <button onclick="body_temperature()" id="body_temperature_btn"> submit body temperature</button>
+</div>
+    <input type="text" id="pulse"/>
+    <button onclick="pulse()" id="pulse_btn"> submit pulse</button>
+    <script src="./temperature.js"></script>
+</body>
+
+<script>
+    const socket = io.connect('https://iot-back.herokuapp.com/');
+
+    const temp = document.getElementById("room_temperature");
+    const body_temp = document.getElementById("body_temperature")
+    const pulse_rate = document.getElementById("pulse")
+    const temperature = () =>{
+        
+        socket.emit('temp_data',temp.value)
+    }
+    const body_temperature = () =>{
+        console.log("yes")
+        socket.emit('body_temp_data',body_temp.value)
+    }
+    const pulse = () =>{
+        socket.emit('pulse_data',pulse_rate.value)
+    }
+
+</script>
+</html>
