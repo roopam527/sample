@@ -2,7 +2,7 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background: url("../../img/map-of-the-world-2401458_1280.jpg") fixed no-repeat;
+  background: url("../img/map-of-the-world-2401458_1280.jpg") fixed no-repeat;
   background-size: cover;
   animation: bg-animate 5s infinite;
   -webkit-animation: bg-animate 5s infinite;
